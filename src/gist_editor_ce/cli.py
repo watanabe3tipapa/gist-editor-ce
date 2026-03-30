@@ -54,7 +54,7 @@ def auth_login(
         user = github_api.get_token_info()
         console.print(f"[green]Authenticated as:[/green] {user.get('login', 'unknown')}")
     except GistApiError as e:
-        console.print(f"[yellow]Token saved but verification failed:[/red] {e}")
+        console.print(f"[yellow]Token saved but verification failed: {e}[/yellow]")
 
 
 @app.command()

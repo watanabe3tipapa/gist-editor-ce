@@ -79,6 +79,19 @@ uv pip install -e .
 
 #### 4. Personal Access Token（PAT）の取得
 
+##### Fine-grained tokens（推奨）
+
+1. GitHubにログイン
+2. Settings → Developer settings → Personal access tokens → Fine-grained tokens
+3. `Generate new token`
+4. Token name: 任意（例: `gist-editor-ce`）
+5. Resource owner: 自身（またはOrganizationを選択）
+6. Repository access: All repositories または対象リポジトリのみ
+7. Permissions → Repository permissions → Gists: Read and write
+8. Tokenをコピー
+
+##### Tokens（classic）
+
 1. GitHubにログイン
 2. Settings → Developer settings → Personal access tokens → Tokens (classic)
 3. `Generate new token (classic)`
@@ -334,7 +347,8 @@ uv pip install -e .
 ###認証エラー（401/403）
 
 - PATが正しいか確認
-- `gist`スコープがあるか確認
+- Classicトークンの場合: `gist`スコープがあるか確認
+- Fine-grainedトークンの場合: Gists → Read and write の権限があるか確認
 - Tokenが有効か確認
 - `gist-editor-ce auth-status`で状態確認
 
