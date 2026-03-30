@@ -155,6 +155,8 @@ gist-editor-ce list --public
 gist-editor-ce list --starred
 ```
 
+![list command](assets/list_command.jpg)
+
 ### Gistの内容を表示
 
 ```bash
